@@ -1,0 +1,24 @@
+package com.javarush.task.pro.task04.task0407;
+
+/* 
+Сумма чисел, не кратных 3
+*/
+
+public class Solution {
+    public static void main(String[] args) {
+        //напишите тут ваш код
+        int x=0;
+        int sum = 0;
+while(x < 101)
+{
+   if((x%3) == 0) 
+   {
+       x++;
+       continue;
+   }
+   sum +=x;
+   x++;
+}
+System.out.println(sum);
+    }
+}
