@@ -1,0 +1,35 @@
+package com.javarush.task.pro.task05.task0508;
+
+import java.util.Scanner;
+
+/* 
+Удаляем одинаковые строки
+*/
+
+public class Solution {
+    public static String[] strings=new String[6];
+
+    public static void main(String[] args) {
+        //напишите тут ваш код
+        Scanner scan = new Scanner(System.in);
+        String[] strings1=new String[6];
+        for (int i = 0; i < 6; i++) {
+            strings[i] = scan.nextLine();
+            strings1[i] = strings[i];
+        }
+        for (int i = 0; i < 6; i++) {
+            String temp=strings[i];
+            int count=0;
+            for (int j = 0; j < 6; j++) {
+                if(temp.equalsIgnoreCase(strings1[j]))
+                    count++;
+            }
+            if(count>1)
+                strings[i]=null;
+        }
+
+        for (int i = 0; i < strings.length; i++) {
+            System.out.print(strings[i] + ", ");
+        }
+    }
+}
