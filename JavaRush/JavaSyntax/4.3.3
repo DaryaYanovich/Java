@@ -1,0 +1,29 @@
+package com.javarush.task.pro.task04.task0403;
+
+import java.util.Scanner;
+
+/* 
+Суммирование
+*/
+
+public class Solution {
+    public static void main(String[] args) {
+        //напишите тут ваш код
+        String pass = "ENTER";
+        boolean isExit = false;
+        int sum = 0;
+        while(!isExit)
+        {
+        Scanner scanner = new Scanner(System.in);
+        String x = scanner.nextLine();
+        if(x.equals(pass))
+            isExit=true;
+        else 
+        {
+            int n = Integer.parseInt(x);
+            sum+=n;
+        }
+            
+        }System.out.println(sum);
+    }
+}
