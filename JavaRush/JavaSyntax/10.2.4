@@ -1,0 +1,123 @@
+package com.javarush.task.pro.task09.task0908;
+
+import java.util.regex.Pattern;
+
+/* 
+Двоично-шестнадцатеричный конвертер
+*/
+
+public class Solution {
+
+    public static void main(String[] args) {
+        String binaryNumber = "100111010000";
+        System.out.println("Двоичное число " + binaryNumber + " равно шестнадцатеричному числу " + toHex(binaryNumber));
+        String hexNumber = "9d0";
+        System.out.println("Шестнадцатеричное число " + hexNumber + " равно двоичному числу " + toBinary(hexNumber));
+    }
+
+    public static String toHex(String binaryNumber) {
+        //напишите тут ваш код
+        String hex = "";
+        if (binaryNumber == null)
+            return hex;
+        StringBuilder temp = new StringBuilder();
+        if (binaryNumber.length() % 4 == 1) {
+            temp.append("000").append(binaryNumber);
+        } else if (binaryNumber.length() % 4 == 2) {
+            temp.append("00").append(binaryNumber);
+        } else if (binaryNumber.length() % 4 == 3) {
+            temp.append("0").append(binaryNumber);
+        } else {
+            temp.append(binaryNumber);
+        }
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < temp.length(); i += 4) {
+            String substring = temp.substring(i, i + 4);
+            String element;
+            if (substring.equals("0000")) {
+                element = "0";
+            } else if (substring.equals("0001")) {
+                element = "1";
+            } else if (substring.equals("0010")) {
+                element = "2";
+            } else if (substring.equals("0011")) {
+                element = "3";
+            } else if (substring.equals("0100")) {
+                element = "4";
+            } else if (substring.equals("0101")) {
+                element = "5";
+            } else if (substring.equals("0110")) {
+                element = "6";
+            } else if (substring.equals("0111")) {
+                element = "7";
+            } else if (substring.equals("1000")) {
+                element = "8";
+            } else if (substring.equals("1001")) {
+                element = "9";
+            } else if (substring.equals("1010")) {
+                element = "a";
+            } else if (substring.equals("1011")) {
+                element = "b";
+            } else if (substring.equals("1100")) {
+                element = "c";
+            } else if (substring.equals("1101")) {
+                element = "d";
+            } else if (substring.equals("1110")) {
+                element = "e";
+            } else if (substring.equals("1111")) {
+                element = "f";
+            } else {
+                result.setLength(0);
+                break;
+            }
+            result.append(element);
+        }
+        return result.toString();
+    }
+
+    public static String toBinary(String hexNumber) {
+        //напишите тут ваш код
+        String binary = "";
+        if(hexNumber==null)
+            return "";
+        for (int i = 0; i < hexNumber.length(); i++) {
+            if(String.valueOf(hexNumber.charAt(i)).equals("0"))
+                binary=binary+"0000";
+            else if(String.valueOf(hexNumber.charAt(i)).equals("1"))
+                binary=binary+"0001";
+            else if(String.valueOf(hexNumber.charAt(i)).equals("2"))
+                binary=binary+"0010";
+            else if(String.valueOf(hexNumber.charAt(i)).equals("3"))
+                binary=binary+"0011";
+            else if(String.valueOf(hexNumber.charAt(i)).equals("4"))
+                binary=binary+"0100";
+            else if(String.valueOf(hexNumber.charAt(i)).equals("5"))
+                binary=binary+"0101";
+            else if(String.valueOf(hexNumber.charAt(i)).equals("6"))
+                binary=binary+"0110";
+            else if(String.valueOf(hexNumber.charAt(i)).equals("7"))
+                binary=binary+"0111";
+            else if(String.valueOf(hexNumber.charAt(i)).equals("8"))
+                binary=binary+"1000";
+            else if(String.valueOf(hexNumber.charAt(i)).equals("9"))
+                binary=binary+"1001";
+            else if(String.valueOf(hexNumber.charAt(i)).equals("a"))
+                binary=binary+"1010";
+            else if(String.valueOf(hexNumber.charAt(i)).equals("b"))
+                binary=binary+"1011";
+            else if(String.valueOf(hexNumber.charAt(i)).equals("c"))
+                binary=binary+"1100";
+            else if(String.valueOf(hexNumber.charAt(i)).equals("d"))
+                binary=binary+"1101";
+            else if(String.valueOf(hexNumber.charAt(i)).equals("e"))
+                binary=binary+"1110";
+            else if(String.valueOf(hexNumber.charAt(i)).equals("f"))
+                binary=binary+"1111";
+            else{
+                binary="";
+                break;
+            }
+        }
+        return binary;
+    }
+}
