@@ -1,0 +1,49 @@
+//Solution.java
+package com.javarush.task.pro.task17.task1707;
+
+/* 
+Питомцы бывают разные
+*/
+
+public class Solution {
+    public static void main(String[] args) {
+        Cat cat = new Cat();
+        cat.printInfo();
+        Dog dog = new Dog();
+        dog.printInfo();
+    }
+}
+//Cat.java
+package com.javarush.task.pro.task17.task1707;
+
+public class Cat extends Pet {
+    public static final String CAT = "Я не люблю людей.";
+
+    @Override
+    public void printInfo() {
+        super.printInfo();
+        System.out.println(CAT);
+    }
+}
+//Dog.java
+package com.javarush.task.pro.task17.task1707;
+
+public class Dog extends Pet {
+    public static final String DOG = "Я люблю людей.";
+
+    @Override
+    public void printInfo() {
+        super.printInfo();
+        System.out.println(DOG);
+    }
+}
+//Pet.java
+package com.javarush.task.pro.task17.task1707;
+
+public class Pet {
+
+    public void printInfo(){
+        System.out.println("Я домашний питомец.");
+    }
+
+}
