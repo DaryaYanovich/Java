@@ -1,0 +1,32 @@
+//Bus.java
+package com.javarush.task.pro.task17.task1716;
+
+public class Bus implements Vehicle{
+    public void move() {
+        System.out.println("Еду со средней скоростью 50 км/ч.");
+    }
+}
+//Car.java
+package com.javarush.task.pro.task17.task1716;
+
+public class Car implements Vehicle {
+    public void move() {
+        System.out.println("Еду со средней скоростью 70 км/ч.");
+    }
+}
+//Vehicle.java
+package com.javarush.task.pro.task17.task1716;
+
+/* 
+Дорожное движение
+*/
+
+public interface Vehicle {
+    default void start(){
+        System.out.println("Начинаю движение.");
+    }
+    void move();
+    default void stop(){
+        System.out.println("Останавливаюсь.");
+    }
+}
