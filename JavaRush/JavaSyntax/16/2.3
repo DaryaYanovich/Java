@@ -1,0 +1,30 @@
+package com.javarush.task.pro.task15.task1506;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.Reader;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.List;
+import java.util.Scanner;
+
+/* 
+Фейсконтроль
+*/
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        //напишите тут ваш код
+        Scanner scan = new Scanner(System.in);
+        List<String> list = Files.readAllLines(Paths.get(scan.nextLine()));
+        for (String s:list) {
+            s=s.replace(".","");
+            s=s.replace(",","");
+            s=s.replace(" ","");
+            System.out.println(s);
+        }
+
+    }
+}
+
