@@ -1,0 +1,34 @@
+//Aircraft.java
+package com.javarush.task.pro.task17.task1717;
+
+public class Aircraft implements Flyable {
+    public int getMaxSpeed(){
+        return 1200;
+    }
+}
+//Eagle.java
+package com.javarush.task.pro.task17.task1717;
+
+public class Eagle implements Flyable {
+    public int getMaxSpeed(){
+        return 180;
+    }
+}
+//Flyable.java
+package com.javarush.task.pro.task17.task1717;
+
+/* 
+Кто летит?
+*/
+
+public interface Flyable {
+    int getMaxSpeed();
+}
+//Raven.java
+package com.javarush.task.pro.task17.task1717;
+
+public class Raven implements Flyable {
+    public int getMaxSpeed(){
+        return 48;
+    }
+}
