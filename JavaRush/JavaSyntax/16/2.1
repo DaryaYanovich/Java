@@ -1,0 +1,32 @@
+package com.javarush.task.pro.task15.task1504;
+
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Scanner;
+
+/* 
+Перепутанные байты
+*/
+
+public class Solution {
+    public static void main(String[] args) {
+        //напишите тут ваш код
+        try (Scanner scan = new Scanner(System.in);
+             InputStream input = Files.newInputStream(Paths.get(scan.nextLine()));
+             OutputStream output = Files.newOutputStream(Paths.get(scan.nextLine()))) {
+            byte[] buf = input.readAllBytes();
+            for(int i = 0; i < buf.length; i += 2 ){
+                if(i+1< buf.length) output.write(buf[i+1]);
+                output.write(buf[i]);
+            }
+            output.close();
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+}
+
