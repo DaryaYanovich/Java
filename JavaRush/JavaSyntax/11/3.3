@@ -1,0 +1,44 @@
+//Solution.java
+package com.javarush.task.pro.task10.task1006;
+
+/* 
+Кто тут наследник?
+*/
+
+public class Solution {
+    public static void main(String[] args) {
+        //напишите тут ваш код
+        new GasCar();
+        new HybridCar();
+        new ElectricCar();
+    }
+}
+//Car.java
+package com.javarush.task.pro.task10.task1006;
+
+public class Car {
+
+    public Car(String type) {
+        System.out.println("Привет. Я " + type);
+    }
+}
+//ElectricCar.java
+package com.javarush.task.pro.task10.task1006;
+
+public class ElectricCar extends Car {
+
+    public ElectricCar() {
+        //напишите тут ваш код
+        super("ElectricCar");
+    }
+ }
+//GasCar.java
+package com.javarush.task.pro.task10.task1006;
+
+public class GasCar extends Car {
+
+    public GasCar() {
+        //напишите тут ваш код
+        super("GasCar");
+    }
+}
