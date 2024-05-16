@@ -1,0 +1,60 @@
+//Solution.java
+package com.javarush.task.pro.task17.task1706;
+
+/* 
+Хищники vs Травоядные
+*/
+
+public class Solution {
+    public static void main(String[] args) {
+        printRation(new Cow());
+        printRation(new Lion());
+        printRation(new Elephant());
+        printRation(new Wolf());
+    }
+
+    public static void printRation(Animal animal){
+        String herbivore = "Любит траву";
+        String predator = "Любит мясо";
+
+        //напишите тут ваш код
+        if(animal instanceof Herbivore)
+            System.out.println(herbivore);
+        else System.out.println(predator);
+    }
+}
+//Animal.java
+package com.javarush.task.pro.task17.task1706;
+
+public class Animal {
+}
+//Cow.java
+package com.javarush.task.pro.task17.task1706;
+
+public class Cow extends Herbivore {
+}
+//Elephant.java
+package com.javarush.task.pro.task17.task1706;
+
+public class Elephant extends Herbivore {
+}
+//Herbivore.java
+package com.javarush.task.pro.task17.task1706;
+
+public class Herbivore extends Animal {
+}
+//Lion.java
+package com.javarush.task.pro.task17.task1706;
+
+public class Lion extends Predator {
+}
+//Predator.java
+package com.javarush.task.pro.task17.task1706;
+
+public class Lion extends Predator {
+}
+//Wolf.java
+package com.javarush.task.pro.task17.task1706;
+
+public class Wolf extends Predator {
+}
