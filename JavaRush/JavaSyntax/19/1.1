@@ -1,0 +1,57 @@
+//Solution.java
+package com.javarush.task.pro.task18.task1801;
+
+import java.util.ArrayList;
+
+/* 
+Две реализации одного интерфейса
+*/
+
+public class Solution {
+    public static ArrayList<Runnable> list = new ArrayList<>();
+
+    public static void main(String[] args) {
+        addToList(new Car());
+        addToList(new Plane());
+
+        runList();
+    }
+
+    public static void addToList(Runnable runnable) {
+        //напишите тут ваш код
+        list.add(runnable);
+    }
+
+    public static void runList() {
+        //напишите тут ваш код
+        for (var runble:list) {
+            runble.run();
+        }
+    }
+}
+//Car.java
+package com.javarush.task.pro.task18.task1801;
+
+public class Car implements Runnable {
+
+    @Override
+    public void run() {
+        System.out.println("Car is running!");
+    }
+}
+//Plane.java
+package com.javarush.task.pro.task18.task1801;
+
+public class Plane implements Runnable {
+
+    @Override
+    public void run() {
+        System.out.println("Plane is running!");
+    }
+}
+//Runnable.java
+package com.javarush.task.pro.task18.task1801;
+
+public interface Runnable {
+    void run();
+}
